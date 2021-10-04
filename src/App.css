@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.container{
+  border-color: #282c34;
+  border-style: solid;
+  margin: 3%;
+  padding: 3%;
+}
+
+.chat-text-container{
+  width: 60%;
+  float: right;
+}
