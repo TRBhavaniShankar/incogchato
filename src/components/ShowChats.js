@@ -10,7 +10,7 @@ function ShowChats() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                
+
                 const response = await fetch(url)
                 const json = await response.json()
                 return json.map((post) => {
@@ -29,8 +29,8 @@ function ShowChats() {
     }, [])
 
     return (
-        <div>
-            <ul>{posts}</ul>
+        <div className="message-list-container">
+            <ul className="message-list">{posts}</ul>
         </div>
     )
     

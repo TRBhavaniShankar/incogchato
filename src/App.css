@@ -38,13 +38,35 @@
 }
 
 .container{
+  display: flex;
+  flex-direction: column;
   border-color: #282c34;
   border-style: solid;
   margin: 3%;
   padding: 3%;
+  height: auto;
 }
 
 .chat-text-container{
   width: 60%;
   float: right;
+}
+
+.post{
+  width: 50%;
+  float: right;
+  border-color: #282c34;
+  border-style: solid;
+}
+
+ul.message-list{
+  list-style-type: none;
+}
+
+.message-list-container{
+  margin: 3%;
+}
+
+.send-msg{
+  margin: 3%;
 }

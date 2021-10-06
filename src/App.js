@@ -46,14 +46,12 @@ function App() {
   return (
     <div className="App container" >
       <p>Chat</p>
+      <ShowChats />
       <div>
-        <ShowChats />
+        <textarea className="chat-text-container" value={chatText} onChange={onTextChange} ></textarea>
       </div>
       <div>
-        {/* <form > */}
-          <input className="chat-text-container" value={chatText} onChange={onTextChange} ></input>  
-          <button type="submit" onClick={handleSubmitEvent}>Submit</button>
-        {/* </form> */}
+        <button className="send-msg" type="submit" onClick={handleSubmitEvent}>Submit</button>
       </div>
     </div>
   );
