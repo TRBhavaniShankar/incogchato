@@ -77,3 +77,8 @@ ul.avatar-list{
   list-style-type: none;
   justify-content: center;
 }
+
+img.avatar{
+  padding: 10px;
+  border-radius: 50%;
+}

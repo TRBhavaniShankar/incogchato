@@ -28,7 +28,7 @@ function AvatarsComponent(props) {
 
     return (
         <div className="avatars-container">
-            <p>Welcome to IncogChato</p>
+            <h1>Welcome to IncogChato</h1>
             <p>Please select one of the below avatars to start chatting!</p>
             <ul className="avatar-list">{avatars}</ul>
         </div>
