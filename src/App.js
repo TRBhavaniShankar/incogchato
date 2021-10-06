@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import { useState } from 'react';
 import './App.css';
 import ShowChats from './components/ShowChats'
+import AvatarsComponent from './components/AvatarsComponent'
 
 function App() {
 
@@ -45,14 +46,14 @@ function App() {
 
   return (
     <div className="App container" >
-      <p>Chat</p>
-      <ShowChats />
+      {/* <ShowChats />
       <div>
         <textarea className="chat-text-container" value={chatText} onChange={onTextChange} ></textarea>
       </div>
       <div>
         <button className="send-msg" type="submit" onClick={handleSubmitEvent}>Submit</button>
-      </div>
+      </div> */}
+      <AvatarsComponent />
     </div>
   );
 }

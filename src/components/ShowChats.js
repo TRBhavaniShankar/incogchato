@@ -14,7 +14,7 @@ function ShowChats() {
                 const response = await fetch(url)
                 const json = await response.json()
                 return json.map((post) => {
-                    return <Post post={post}></Post>
+                    return <Post key={post._id} post={post}></Post>
                 })
                 
             } catch (error) {

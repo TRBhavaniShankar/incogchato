@@ -70,3 +70,10 @@ ul.message-list{
 .send-msg{
   margin: 3%;
 }
+
+ul.avatar-list{
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  justify-content: center;
+}
