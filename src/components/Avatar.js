@@ -7,7 +7,6 @@ function Avatar(props) {
         // make a fetch call to post the access request
     }
 
-
     return (
         <li>
             <img src={image} alt={`avatar ${id}`} className="avatar" width="120px" height="120px" 

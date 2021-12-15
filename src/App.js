@@ -1,59 +1,34 @@
 import logo from './logo.svg';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import ShowChats from './components/ShowChats'
 import AvatarsComponent from './components/AvatarsComponent'
 
 function App() {
 
-  const [chatText, setChatText] = useState("")
+  const [hasUser, setHasUser] = useState(null)
+  const [isWriteUser, setIsWriteUser] = useState(false)
 
-  const onTextChange = (event) => {
-    setChatText(event.target.value)
-  }
+  useEffect(() => {
+    
+    
 
-  const handleSubmitEvent = (event) => {
-    event.preventDefault()
-    console.log(chatText)
-
-    const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        "body": chatText,
-        "avatar_id": "6"
-      })
-    }
-
-    fetch('http://localhost:8000/post', requestOptions)
-      .then(async response => {
-          const isJson = response.headers.get('content-type')?.includes('application/json');
-          const data = isJson && await response.json();
-
-          // check for error response
-          if (!response.ok) {
-              // get error message from body or default to response status
-              const error = (data && data.message) || response.status;
-              return Promise.reject(error);
-          }
-          console.log(response)
-      })
-      .catch(error => {
-          this.setState({ errorMessage: error.toString() });
-          console.error('There was an error!', error);
-      });
-  }
+  }, [])
 
   return (
-    <div className="App container" >
-      {/* <ShowChats />
-      <div>
-        <textarea className="chat-text-container" value={chatText} onChange={onTextChange} ></textarea>
-      </div>
-      <div>
-        <button className="send-msg" type="submit" onClick={handleSubmitEvent}>Submit</button>
-      </div> */}
+    <div className="App container">
+
+      {/* if there is no write chatter. This will be push notification */}
+      {/* {(hasUser !== null && !hasUser) &&  <AvatarsComponent />} */}
       <AvatarsComponent />
+      
+      {/* wait until we check whether to show avatar or chats */}
+      {/* {(hasUser !== null && hasUser) && <ShowChats />} */}
+      <ShowChats />
+
+      {/* while the side effect for checking the user */}
+      {/* {(hasUser === null) && <p>Loading..</p>} */}
+      
     </div>
   );
 }
