@@ -5,6 +5,7 @@ function AvatarsComponent(props) {
 
     const [avatars, setAvatars] = useState([])
 
+    // use effect 
     useEffect(() => {
         
         let avatars = []

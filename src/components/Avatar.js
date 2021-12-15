@@ -2,6 +2,7 @@ import React, {useEffect} from 'react'
 
 function Avatar(props) {
 
+    // avatar id
     const { id, image } = props;
     const onAvatarSelect = () => {
         // make a fetch call to post the access request
